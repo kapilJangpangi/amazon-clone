@@ -9,7 +9,7 @@ const reducer = (state, action) => {
     case "ADD":
       return {
         ...state,
-        basket: [...state.basket, action.item]
+        basket: [...state.basket, action.items]
       }
     case "REMOVE":
       return {state}

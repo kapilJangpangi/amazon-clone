@@ -41,5 +41,12 @@
   background-color: #f0c14b;
   border: 1px solid;
   border-color: #a88734 #9c7e31 #846a29 ;
+  cursor: pointer;
+  height: 30px;
 
+}
+
+small {
+  margin-right: 2px;
+  font-size: 17px;
 }

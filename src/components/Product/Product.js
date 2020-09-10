@@ -4,17 +4,17 @@ import { useStateValue } from '../../Context-api/StateProvider';
 
 function Product({ id, image, title, rating, price }) {
 
-  const [{basket}, dispatch] = useStateValue();
+  const [{basket}, dispatch] = useStateValue();  
 
   const addToBasket = () => {
     dispatch({
       type: 'ADD',
       items: {
-        id,
-        title,
-        rating,
-        image,
-        price
+        id: id,
+        title: title,
+        rating: rating,
+        image: image,
+        price: price
       }
     })
   }
