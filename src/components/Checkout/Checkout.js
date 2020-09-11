@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react'
 import { useStateValue } from '../../Context-api/StateProvider';
-import AddImg from '../../assets/img/OLA.jpg';
+import AddImg from '../../assets/img/finally.jpg';
 import './Checkout.css';
 import Subtotal from '../Subtotal/Subtotal';
 import CheckoutProduct from './CheckoutProduct/CheckoutProduct';
@@ -9,8 +9,6 @@ function Checkout() {
   const [{basket}] = useStateValue();
   console.log(basket)
   
-  
-
   //console.log(img.pop())
   //console.log(subtotal)
   
@@ -19,10 +17,10 @@ function Checkout() {
     <Fragment>
         <div className="checkout">
             <img className="checkout__add"  src={AddImg}/>
-            <div className="ola">
-            <Subtotal />
-            </div>
-            {
+            <Subtotal/>          
+        </div>
+        <div className="another">
+        {
             basket?.length === 0 ? (
               <div>
                 <h2>Your Shopping Basket is empty</h2>
@@ -35,9 +33,9 @@ function Checkout() {
               <div>
                 <h2 className="checkout__title">Your Shopping Basket</h2>
                 <span class="checkout__icon">&nbsp;</span>
-                {basket.map(item => (
+                {basket?.map(item => (
                   <CheckoutProduct
-                    item={item.id}
+                    id={item.id}
                     image={item.image}
                     title={item.title}
                     price={item.price}
@@ -49,7 +47,6 @@ function Checkout() {
             ) 
           }
         </div>
-        
 
         
           

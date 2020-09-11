@@ -1,4 +1,4 @@
-.checkout__box {
+.subtotal__box {
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -29,10 +29,10 @@ strong {
   font-size: 19px;
 }
 
-.checkout__subtotal {
+.subtotal__subtotal {
   text-align: center;
 }
-.checkout__proceedBtn {
+.subtotal__proceedBtn {
   margin: 25px auto;
   width: 70%;
   border-radius: 5%;
@@ -43,6 +43,10 @@ strong {
   cursor: pointer;
 }
 
-.checkout__proceedBtn:hover {
+.subtotal__proceedBtn:hover {
   background-color: #ddb917
+}
+
+.subtotal__img {
+  margin-left: 40px;
 }

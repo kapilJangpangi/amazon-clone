@@ -1,6 +1,17 @@
-import React, {Fragment} from 'react'
-import './CheckoutProduct.css'
+import React, {Fragment} from 'react';
+import './CheckoutProduct.css';
+import { useStateValue } from '../../../Context-api/StateProvider';
+
+
+
 function CheckoutProduct({id, title, image, price, rating}) {
+
+  const [{basket}, dispatch] = useStateValue();
+
+  const remove = () => {
+    dispatch({ type: 'REMOVE', id: id })
+  }
+
   return (
     <Fragment>
         <div className="checkoutProduct">
@@ -8,20 +19,24 @@ function CheckoutProduct({id, title, image, price, rating}) {
         <div className="checkoutProduct__info">
           <p className="checkoutProduct__title">{title}</p>
           <p className="checkoutProduct__price">
-              <small>&#8377;</small>
-              <strong>{price}</strong>
+            {image && <small>&#8377;</small>}  
+            <strong>{price}</strong>
           </p>
+          {
+          image && 
           <div className="checkoutProduct__rating" >
             {Array(rating)
               .fill()
-              .map((_) => (
+              .map((_) =>(
                 <p>⭐</p>
               ))}
           </div>
-          <button>Remove from Basket</button>
+          }
+          
+          {image && <button onClick={remove}>Remove from Basket</button>}
         </div>
       </div>
-      <span class="checkoutProduct__icon">&nbsp;</span>
+      {image && <span class="checkoutProduct__icon">&nbsp;</span>}
     </Fragment>
     
   )

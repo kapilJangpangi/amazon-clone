@@ -27,9 +27,26 @@
   
 }
 
+@media only screen and (max-width: 1200px) {
+  .home__image {
+    margin-bottom: -150px;
+    
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .home__image {
+    margin-bottom: -120px;
+    
+  }
+}
 .home__row {
   display: flex;
   z-index: 1;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.home__special {
+  z-index: 1;
 }

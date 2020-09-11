@@ -4,19 +4,20 @@
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  padding: 20px;
-  min-width: 100px;
   max-height: 400px;
   margin: 10px;
   background-color: white;
+  padding: 15px;
   z-index: 1;
+  transition: all 0.4s;
+ 
 }
 
-@media only screen and (max-width: 600px) {
-  .product {
-    max-height: 700px;
-  }
+.product:hover {
+  transform: translateY(-0.9rem);
+  box-shadow: 0 0.5rem 4rem rgba(#000, .15);
 }
+
 
 .product__rating {
   display: flex;

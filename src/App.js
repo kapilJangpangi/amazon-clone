@@ -22,6 +22,9 @@ function App() {
           <Header />
           <Home />
         </Route>
+        <Route path="">
+
+        </Route>
       </Switch> 
       </div>
       

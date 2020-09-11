@@ -12,7 +12,13 @@ const reducer = (state, action) => {
         basket: [...state.basket, action.items]
       }
     case "REMOVE":
-      return {state}
+      let newBasket =   [...state.basket]; 
+      let ola = newBasket.filter(ing => ing.id !== action.id)
+      console.log(ola)
+      return {
+        ...state,
+        basket: ola  
+      }
     default:
       return state;
   }

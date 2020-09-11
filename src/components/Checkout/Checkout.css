@@ -1,13 +1,15 @@
 .checkout {
   display: flex;
   background-color: white !important;
-  flex-direction: column;
+  /* flex-direction: column; */
  
   
 }
-
-.checkout__product img {
-  width: 200px;
+.another {
+  background-color: white !important;
+}
+.checkout img {
+  width: 75%;
 }
 
 .checkout__add {
@@ -25,10 +27,4 @@
 .checkout h2 {
   margin-left: 30px;
   margin-top: 30px;
-}
-.ola {
-  position: absolute;
-  top: 6%;
-  left: 80%;
-  width: 58%;
 }
