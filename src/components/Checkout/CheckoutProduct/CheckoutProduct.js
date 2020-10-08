@@ -1,10 +1,11 @@
-import React, {Fragment} from 'react';
+import React, {forwardRef, Fragment} from 'react';
 import './CheckoutProduct.css';
 import { useStateValue } from '../../../Context-api/StateProvider';
 
 
 
-function CheckoutProduct({id, title, image, price, rating}) {
+
+const CheckoutProduct = forwardRef(({id, title, image, price, rating}, ref) => {
 
   const [{basket}, dispatch] = useStateValue();
 
@@ -14,7 +15,7 @@ function CheckoutProduct({id, title, image, price, rating}) {
 
   return (
     <Fragment>
-        <div className="checkoutProduct">
+        <div className="checkoutProduct" ref={ref} >
         <img src={image}/>
         <div className="checkoutProduct__info">
           <p className="checkoutProduct__title">{title}</p>
@@ -33,13 +34,13 @@ function CheckoutProduct({id, title, image, price, rating}) {
           </div>
           }
           
-          {image && <button onClick={remove}>Remove from Basket</button>}
+          {image && <button ref={ref} onClick={remove}>Remove from Basket</button>}
         </div>
       </div>
       {image && <span class="checkoutProduct__icon">&nbsp;</span>}
     </Fragment>
     
   )
-}
+})
 
 export default CheckoutProduct

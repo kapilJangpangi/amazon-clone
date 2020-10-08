@@ -4,6 +4,7 @@ import AddImg from '../../assets/img/finally.jpg';
 import './Checkout.css';
 import Subtotal from '../Subtotal/Subtotal';
 import CheckoutProduct from './CheckoutProduct/CheckoutProduct';
+import FlipMove from 'react-flip-move';
  
 function Checkout() {
   const [{basket}] = useStateValue();
@@ -33,16 +34,19 @@ function Checkout() {
               <div>
                 <h2 className="checkout__title">Your Shopping Basket</h2>
                 <span class="checkout__icon">&nbsp;</span>
-                {basket?.map(item => (
-                  <CheckoutProduct
-                    id={item.id}
-                    image={item.image}
-                    title={item.title}
-                    price={item.price}
-                    rating={item.rating} 
-                    />
-                  ))
-                }
+                <FlipMove enterAnimation="elevator" leaveAnimation="elevator"  >
+                  {basket?.map(item => (
+                    <CheckoutProduct
+                      id={item.id}
+                      image={item.image}
+                      title={item.title}
+                      price={item.price}
+                      rating={item.rating} 
+                      />
+                    ))
+                  }
+                </FlipMove>
+                
               </div>
             ) 
           }

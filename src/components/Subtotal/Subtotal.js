@@ -2,9 +2,12 @@ import React from 'react';
 import { useStateValue } from '../../Context-api/StateProvider';
 import './Subtotal.css';
 import CheckImg from '../../assets/img/check.png';
+import { useHistory } from 'react-router-dom';
 
 function Subtotal() {
   const [{basket}] = useStateValue();
+
+  const history = useHistory()
 
   let price = [];
   basket.forEach(el => {
@@ -34,7 +37,7 @@ function Subtotal() {
           {subtotal && <strong>{subtotal.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</strong>}
           
         </div>
-        <button className="subtotal__proceedBtn">Procced to Buy</button>
+        <button onClick={e => history.push('/payment')} className="subtotal__proceedBtn">Procced to Buy</button>
         <img src={CheckImg} className="subtotal__img" alt="protection Image" />
       </div> 
 
